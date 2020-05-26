@@ -17,6 +17,7 @@ pipeline {
         stage ('Build') {
             steps {
                 echo 'This is a minimal pipeline.'
+                echo "Running ${env.BUILD_ID} on ${env.JENKINS_URL}"
 		    //sh """ls -ltr
 		    //pwd
 		    //chmod 777 /var/jenkins_home/workspace/TestProject/Drivers/chromedriver"""
