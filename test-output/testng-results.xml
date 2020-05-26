@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="7" passed="7">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Suite" duration-ms="70808" started-at="2020-05-26T09:08:47Z" finished-at="2020-05-26T09:09:58Z">
+    <groups>
+    </groups>
+    <test name="Test" duration-ms="70808" started-at="2020-05-26T09:08:47Z" finished-at="2020-05-26T09:09:58Z">
+      <class name="com.globomantics.test.testcases.HomePageTest">
+        <test-method status="PASS" signature="openBrowser()[pri:0, instance:com.globomantics.test.testcases.HomePageTest@7d68ef40]" name="openBrowser" is-config="true" duration-ms="4430" started-at="2020-05-26T14:38:47Z" finished-at="2020-05-26T14:38:51Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- openBrowser -->
+        <test-method status="PASS" signature="HomePageTitle()[pri:0, instance:com.globomantics.test.testcases.HomePageTest@7d68ef40]" name="HomePageTitle" duration-ms="2214" started-at="2020-05-26T14:38:51Z" finished-at="2020-05-26T14:38:54Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- HomePageTitle -->
+        <test-method status="PASS" signature="gbmLogo()[pri:0, instance:com.globomantics.test.testcases.HomePageTest@7d68ef40]" name="gbmLogo" duration-ms="2069" started-at="2020-05-26T14:38:57Z" finished-at="2020-05-26T14:38:59Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- gbmLogo -->
+        <test-method status="PASS" signature="gbmEmailIcon()[pri:0, instance:com.globomantics.test.testcases.HomePageTest@7d68ef40]" name="gbmEmailIcon" duration-ms="1582" started-at="2020-05-26T14:39:02Z" finished-at="2020-05-26T14:39:04Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- gbmEmailIcon -->
+        <test-method status="PASS" signature="gbmHomePageImage()[pri:0, instance:com.globomantics.test.testcases.HomePageTest@7d68ef40]" name="gbmHomePageImage" duration-ms="1404" started-at="2020-05-26T14:39:06Z" finished-at="2020-05-26T14:39:08Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- gbmHomePageImage -->
+        <test-method status="PASS" signature="enterDetails()[pri:0, instance:com.globomantics.test.testcases.HomePageTest@7d68ef40]" name="enterDetails" duration-ms="4046" started-at="2020-05-26T14:39:10Z" finished-at="2020-05-26T14:39:14Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- enterDetails -->
+        <test-method status="PASS" signature="quitBrowser()[pri:0, instance:com.globomantics.test.testcases.HomePageTest@7d68ef40]" name="quitBrowser" is-config="true" duration-ms="334" started-at="2020-05-26T14:39:21Z" finished-at="2020-05-26T14:39:21Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- quitBrowser -->
+      </class> <!-- com.globomantics.test.testcases.HomePageTest -->
+      <class name="com.globomantics.test.testcases.NetherlandPageTest">
+        <test-method status="PASS" signature="openBrowser()[pri:0, instance:com.globomantics.test.testcases.NetherlandPageTest@14a2f921]" name="openBrowser" is-config="true" duration-ms="3591" started-at="2020-05-26T14:39:21Z" finished-at="2020-05-26T14:39:25Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- openBrowser -->
+        <test-method status="PASS" signature="compareValues()[pri:0, instance:com.globomantics.test.testcases.NetherlandPageTest@14a2f921]" name="compareValues" duration-ms="8612" started-at="2020-05-26T14:39:25Z" finished-at="2020-05-26T14:39:34Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- compareValues -->
+        <test-method status="PASS" signature="quitBrowser()[pri:0, instance:com.globomantics.test.testcases.NetherlandPageTest@14a2f921]" name="quitBrowser" is-config="true" duration-ms="319" started-at="2020-05-26T14:39:42Z" finished-at="2020-05-26T14:39:42Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- quitBrowser -->
+      </class> <!-- com.globomantics.test.testcases.NetherlandPageTest -->
+      <class name="com.globomantics.test.testcases.SwitzerlandPageTest">
+        <test-method status="PASS" signature="openBrowser()[pri:0, instance:com.globomantics.test.testcases.SwitzerlandPageTest@3c87521]" name="openBrowser" is-config="true" duration-ms="3643" started-at="2020-05-26T14:39:42Z" finished-at="2020-05-26T14:39:46Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- openBrowser -->
+        <test-method status="PASS" signature="compareValues()[pri:0, instance:com.globomantics.test.testcases.SwitzerlandPageTest@3c87521]" name="compareValues" duration-ms="7066" started-at="2020-05-26T14:39:46Z" finished-at="2020-05-26T14:39:53Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- compareValues -->
+        <test-method status="PASS" signature="quitBrowser()[pri:0, instance:com.globomantics.test.testcases.SwitzerlandPageTest@3c87521]" name="quitBrowser" is-config="true" duration-ms="354" started-at="2020-05-26T14:39:57Z" finished-at="2020-05-26T14:39:58Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- quitBrowser -->
+      </class> <!-- com.globomantics.test.testcases.SwitzerlandPageTest -->
+    </test> <!-- Test -->
+  </suite> <!-- Suite -->
+</testng-results>
