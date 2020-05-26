@@ -43,8 +43,8 @@ pipeline {
 	{
 	always
 		{
-		//cleanWs()
-		//junit 'target/surefire-reports/junitreports/**/*.xml'
+		
+		
 		 publishHTML (target: [
       allowMissing: false,
       alwaysLinkToLastBuild: false,
@@ -57,4 +57,3 @@ pipeline {
 		}
 	}
 }
-
