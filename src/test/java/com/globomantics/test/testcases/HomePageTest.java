@@ -44,14 +44,14 @@ public class HomePageTest extends TestBase {
 	}
 
 	@Test(priority = 2)
-	public void gbmLogo() {
+	public void GlobomanticsLogo() {
 		LOGGER.info(Utilities.getCurrentThreadId() + "Validating Logo- " + homePage.visibilityOfLogo());
 		boolean flag = homePage.visibilityOfLogo();
 		Assert.assertTrue(flag);
 	}
 
 	@Test(priority = 3)
-	public void gbmEmailIcon() {
+	public void GlobomanticsEmailIcon() {
 		LOGGER.info(Utilities.getCurrentThreadId() + "Validating if the email icon is present or not- "
 				+ homePage.visibilityOfEmailIcon());
 		boolean flag = homePage.visibilityOfEmailIcon();
@@ -59,7 +59,7 @@ public class HomePageTest extends TestBase {
 	}
 
 	@Test(priority = 4)
-	public void gbmHomePageImage() {
+	public void GlobomanticsHomePageImage() {
 		LOGGER.info(Utilities.getCurrentThreadId() + "Validating if the homepage image is present or not- "
 				+ homePage.visibilityOfLogo());
 		boolean flag = homePage.visibilityOfHomePageImage();
@@ -67,7 +67,7 @@ public class HomePageTest extends TestBase {
 	}
 
 	@Test(priority = 5)
-	public void enterDetails() {
+	public void GlobomanticsEnterDetails() {
 		LOGGER.info(Utilities.getCurrentThreadId() + "Enter details: " + '\n' + (prop.getProperty("name") + '\n'
 				+ prop.getProperty("emailadrs") + '\n' + prop.getProperty("remarks")));
 		homePage.register(prop.getProperty("name"), prop.getProperty("emailadrs"), prop.getProperty("remarks"));

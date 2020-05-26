@@ -37,7 +37,7 @@ public class SwitzerlandPageTest extends TestBase {
 	}
 
 	@Test(priority = 1)
-	public void compareValues() throws TimeoutException
+	public void CompareAddressOfSwitzerland() throws TimeoutException
 
 	{
 		LOGGER.info(Utilities.getCurrentThreadId() + "Comparing the address between the home page and the table ");
