@@ -11,6 +11,9 @@ pipeline {
                     echo "PATH = ${PATH}"
                     echo "M2_HOME = ${M2_HOME}"
                 ''' 
+                sh label: '', script: '''System.clearProperty("hudson.model.DirectoryBrowserSupport.CSP");
+System.setProperty("hudson.model.DirectoryBrowserSupport.CSP", "sandbox allow-scripts; default-src \'self\'; script-src * \'unsafe-eval\'; img-src *; style-src * \'unsafe-inline\'; font-src *");
+'''
             }
         }
 
@@ -29,9 +32,7 @@ pipeline {
 		stage ('Testing Stage') {
 
             steps {
-		           sh label: '', script: '''System.clearProperty("hudson.model.DirectoryBrowserSupport.CSP");
-System.setProperty("hudson.model.DirectoryBrowserSupport.CSP", "sandbox allow-scripts; default-src \'self\'; script-src * \'unsafe-eval\'; img-src *; style-src * \'unsafe-inline\'; font-src *");
-'''
+		           
 
                     sh 'mvn test'
                 
