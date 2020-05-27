@@ -44,11 +44,7 @@ pipeline {
 	{
 	always
 		{
-		mail to: 'vijayshreechaturvedi@citiustech.com',
-          subject: "Status of pipeline: ${currentBuild.fullDisplayName}",
-          body: "${env.BUILD_URL} has result ${currentBuild.result}"
-		
-		 publishHTML (target: [
+			 publishHTML (target: [
       allowMissing: false,
       alwaysLinkToLastBuild: false,
       keepAll: true,
