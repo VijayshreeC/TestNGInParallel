@@ -53,6 +53,7 @@ pipeline {
       reportName: "ExtentTest Report"
     ])
 	junit 'target/surefire-reports/junitreports/**/*.xml'
+	googleStorageUpload bucket: 'gs://deploymentbucket', credentialsId: 'TestProject1', pattern: 'target/', sharedPublicly: true
 		}
 	}
 }
