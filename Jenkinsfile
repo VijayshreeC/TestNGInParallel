@@ -53,6 +53,7 @@ pipeline {
       reportName: "ExtentTest Report"
     ])
 	junit 'target/surefire-reports/junitreports/**/*.xml'
+	artifactResolver artifacts: [artifact(artifactId: 'GlobomanticsTest', groupId: 'com.globomanticsTest', version: '0.0.1')], targetDirectory: 'gs://deploymentbucket'
 	googleStorageUpload bucket: 'gs://deploymentbucket', credentialsId: 'TestProject1', pattern: 'reports/', sharedPublicly: true
 		}
 	}
