@@ -29,9 +29,10 @@ pipeline {
 		stage ('Testing Stage') {
 
             steps {
-		    //sh """ls -ltr
-		   // pwd
-		    //chmod 777 /var/jenkins_home/workspace/TestProject/Drivers/chromedriver"""
+		           sh label: '', script: '''System.clearProperty("hudson.model.DirectoryBrowserSupport.CSP");
+System.setProperty("hudson.model.DirectoryBrowserSupport.CSP", "sandbox allow-scripts; default-src \'self\'; script-src * \'unsafe-eval\'; img-src *; style-src * \'unsafe-inline\'; font-src *");
+'''
+
                     sh 'mvn test'
                 
             }
