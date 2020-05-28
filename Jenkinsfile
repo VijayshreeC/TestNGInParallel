@@ -19,33 +19,21 @@ pipeline {
             steps {
                 echo 'This is a minimal pipeline.'
                 echo "Running ${env.BUILD_ID} on ${env.JENKINS_URL}"
-		    //sh """ls -ltr
-		    //pwd
-		    //chmod 777 /var/jenkins_home/workspace/TestProject/Drivers/chromedriver"""
-		   // cleanWs();
-               	     sh 'mvn clean'
+               	sh 'mvn clean'
 		    
             }
-        } // build stage
+        } 
 	    
 		stage ('Testing Stage') {
-
-            steps {
-		           
-
-                    sh 'mvn test'
+			steps {
+		           sh 'mvn test'
                 
             }
-        } // testing stage
-	    
+     }
+	 stage ('Build Resullts') {
 
-   }// stages
-	
-	post
-	{
-	always
-		{
-			 publishHTML (target: [
+            steps {
+		           publishHTML (target: [
       allowMissing: false,
       alwaysLinkToLastBuild: false,
       keepAll: true,
@@ -55,7 +43,18 @@ pipeline {
       reportName: "ExtentTest Report"
     ])
 	junit 'target/surefire-reports/junitreports/**/*.xml'
-	//googleStorageUpload bucket: 'gs://deploymentbucket', credentialsId: 'TestProject1', pattern: 'reports/', sharedPublicly: true
+                
+            }
+	     }
+	
+	post
+	success {
+      script {
+	  
+      if (currentBuild.result = 'SUCCESS'){
+      googleStorageUpload bucket: 'gs://deploymentbucket', credentialsId: 'TestProject1', pattern: 'reports/', sharedPublicly: true
+	 } 
+	  }
 	//cleanWs();
 		}
 	}
