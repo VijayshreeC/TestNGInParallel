@@ -20,8 +20,8 @@ public class TestUtil extends TestBase{
 		String currentDir="/var/jenkins_home/workspace/TestProject1" ; //System.getProperty("user.dir");
 		
 		String destPath= currentDir+"/screenshots/"+System.currentTimeMillis()+TestCaseName+".png";
-		String a=currentDir+"/screenshots";
-		System.out.println("This screenshot path", a);
+		//String a=currentDir+"/screenshots";
+		//System.out.println("This screenshot path", a);
 		File file =new File(destPath);
 		FileUtils.copyFile(scrFile,file);//copies the file from source to the target
 		return destPath;
