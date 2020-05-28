@@ -51,7 +51,7 @@ pipeline {
 	post {
 	success {
       script {
-    if (${env.BRANCH_NAME} == 'master')
+    if (env.BRANCH_NAME == 'master')
         currentBuild.result = 'SUCCESS'
 		googleStorageUpload bucket: 'gs://deploymentbucket', credentialsId: 'TestProject1', pattern: 'reports/', sharedPublicly: true
   }
