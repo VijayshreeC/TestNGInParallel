@@ -30,7 +30,7 @@ pipeline {
                 
             }
      }
-	 stage ('Build Resullts') {
+	 stage ('Build Results') {
 
             steps {
 		           publishHTML (target: [
@@ -46,11 +46,10 @@ pipeline {
                 
             }
 	     }
+		 }
 	
-	post
+	post {
 	success {
-      script {
-	  
       script {
     if (${env.BRANCH_NAME} == 'master')
         currentBuild.result = 'SUCCESS'
@@ -61,5 +60,5 @@ pipeline {
 	  }
 	//cleanWs();
 		}
-	}
+	
 
