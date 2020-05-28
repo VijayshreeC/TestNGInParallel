@@ -22,6 +22,7 @@ pipeline {
 		    //sh """ls -ltr
 		    //pwd
 		    //chmod 777 /var/jenkins_home/workspace/TestProject/Drivers/chromedriver"""
+		    cleanWs();
                	     sh 'mvn clean'
 		    
             }
