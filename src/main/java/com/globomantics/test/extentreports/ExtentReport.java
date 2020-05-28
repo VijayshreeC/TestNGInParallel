@@ -10,7 +10,7 @@ public class ExtentReport
 	public static ExtentReports ReportGenerator()
 	{
 		//extent report,//exteextentspark
-		  String path =System.getProperty("user.dir")+"\\reports\\index.html";
+		  String path ="/var/jenkins_home/workspace/TestProject1/reports/index.html";
 		  ExtentSparkReporter reporter=new ExtentSparkReporter(path);//create html file and config
 		  reporter.config().setReportName("Globmantic");
 		  reporter.config().setDocumentTitle("TestResults");
