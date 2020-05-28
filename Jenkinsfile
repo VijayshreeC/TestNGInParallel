@@ -50,6 +50,7 @@ pipeline {
       alwaysLinkToLastBuild: false,
       keepAll: true,
       reportDir: 'reports',
+      includes: '**/*, **/*.css',
       reportFiles: 'index.html',
       reportName: "ExtentTest Report"
     ])
