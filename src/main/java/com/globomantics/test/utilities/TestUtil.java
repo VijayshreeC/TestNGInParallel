@@ -17,9 +17,9 @@ public class TestUtil extends TestBase{
 	public  String takeSnapShotAtEnd(String TestCaseName) throws Exception
 	{
 		File scrFile=((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);//cast driver to screenshot mode
-		String currentDir="/var/jenkins_home/workspace/TestProject1" ; //System.getProperty("user.dir");
+		//String currentDir="/var/jenkins_home/workspace/TestProject1/reports" ; //System.getProperty("user.dir");
 		
-		String destPath= currentDir+"/screenshots/"+System.currentTimeMillis()+TestCaseName+".png";
+		String destPath= "reports/screenshots/"+System.currentTimeMillis()+TestCaseName+".png";
 		//String a=currentDir+"/screenshots";
 		//System.out.println("This screenshot path", a);
 		File file =new File(destPath);
