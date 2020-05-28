@@ -56,7 +56,7 @@ pipeline {
     ])
 	junit 'target/surefire-reports/junitreports/**/*.xml'
 	//googleStorageUpload bucket: 'gs://deploymentbucket', credentialsId: 'TestProject1', pattern: 'reports/', sharedPublicly: true
-	//cleanWs();
+	cleanWs();
 		}
 	}
 }
