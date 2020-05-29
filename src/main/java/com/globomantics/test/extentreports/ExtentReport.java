@@ -13,7 +13,7 @@ public class ExtentReport {
 	public static ExtentReports ReportGenerator() {
 		extent = new ExtentReports();
 
-		String path = "/var/jenkins_home/workspace/TestProject1/reports/index.html";
+		String path = "/var/jenkins_home/workspace/TestProject/reports/index.html";
 		ExtentSparkReporter reporter = new ExtentSparkReporter(path);
 		reporter.config().setReportName("Globmantic");
 		reporter.config().setDocumentTitle("TestResults");
