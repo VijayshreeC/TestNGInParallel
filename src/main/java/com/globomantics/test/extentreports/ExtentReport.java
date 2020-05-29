@@ -15,6 +15,7 @@ public class ExtentReport {
 		reporter.config().setReportName("Globmantic");
 		reporter.config().setDocumentTitle("TestResults");
 		String css = ".r-img {width: 450PX; height: 400PX}";
+		System.out.println(css);
 		reporter.config().setCSS(css);
 		//reporter.loadXMLConfig(new File("/var/jenkins_home/workspace/TestProject1/extent-config.xml"));
 		extent = new ExtentReports();
