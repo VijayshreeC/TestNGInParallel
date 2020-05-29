@@ -12,7 +12,7 @@ public class ExtentReport {
 		ExtentSparkReporter reporter = new ExtentSparkReporter(path);
 		reporter.config().setReportName("Globmantic");
 		reporter.config().setDocumentTitle("TestResults");
-		reporter.config().setCSS(".r-img { width: 30%; }");
+		reporter.config().setCSS(".r-img { width: 60%; }");
 
 		extent = new ExtentReports();
 		extent.attachReporter(reporter);
