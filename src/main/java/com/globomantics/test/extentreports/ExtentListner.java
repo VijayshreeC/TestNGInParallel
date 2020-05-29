@@ -1,7 +1,6 @@
 package com.globomantics.test.extentreports;
 
 import java.io.IOException;
-
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
@@ -13,7 +12,7 @@ import com.globomantics.test.utilities.TestUtil;
 public class ExtentListner extends TestUtil implements ITestListener {
 	ExtentReports extent = ExtentReport.ReportGenerator();
 	ExtentTest test;
-
+	
 	@Override
 	public void onTestStart(ITestResult result) {
 		test = extent.createTest(result.getMethod().getMethodName());

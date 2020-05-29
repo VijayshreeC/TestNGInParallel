@@ -42,7 +42,7 @@ pipeline {
       keepAll: true,
       reportDir: 'reports',
       includes: '**/*, **/*.css',
-      reportFiles: 'index.html',
+      reportFiles: "^rep.html" , //'index.html',
       reportName: "ExtentTest Report"
     ])
 	junit 'target/surefire-reports/junitreports/**/*.xml'
@@ -56,7 +56,7 @@ pipeline {
       script {
     if (env.BRANCH_NAME == 'master')
         currentBuild.result = 'SUCCESS'
-		googleStorageUpload bucket: 'gs://deploymentbucket', credentialsId: 'TestProject1', pattern: 'reports/index.html', sharedPublicly: true
+		googleStorageUpload bucket: 'gs://deploymentbucket', credentialsId: 'TestProject1', pattern: 'reports/^rep', sharedPublicly: true
   }
       
 	 } 
