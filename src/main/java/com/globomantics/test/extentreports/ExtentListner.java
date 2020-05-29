@@ -69,7 +69,7 @@ public class ExtentListner extends TestUtil implements ITestListener {
 
 	@Override
 	public void onTestFailedButWithinSuccessPercentage(ITestResult result) {
-		test.log(Status.PASS, "Successfull");
+		test.log(Status.PASS, "Successful");
 		try {
 			test.addScreenCaptureFromPath(takeSnapShotAtEnd(result.getMethod().getMethodName()),
 					result.getMethod().getMethodName());
