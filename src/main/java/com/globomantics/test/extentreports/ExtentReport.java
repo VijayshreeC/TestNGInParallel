@@ -4,6 +4,7 @@ import java.io.File;
 
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
+import com.aventstack.extentreports.reporter.configuration.Theme;
 
 public class ExtentReport {
 	static ExtentReports extent;
@@ -17,6 +18,7 @@ public class ExtentReport {
 		String css = ".r-img {width: 450PX; height: 400PX}";
 		System.out.println(css);
 		reporter.config().setCSS(css);
+		reporter.config().setTheme(Theme.DARK);
 		//reporter.loadXMLConfig(new File("/var/jenkins_home/workspace/TestProject1/extent-config.xml"));
 		extent = new ExtentReports();
 
