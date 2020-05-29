@@ -18,7 +18,9 @@ public class ExtentReport {
 		String css = ".r-img {width: 450PX; height: 400PX}";
 		System.out.println(css);
 		reporter.config().setCSS(css);
-		reporter.config().setTheme(Theme.DARK);
+
+		//reporter.config().setTheme(Theme.DARK);
+
 		//reporter.loadXMLConfig(new File("/var/jenkins_home/workspace/TestProject1/extent-config.xml"));
 		extent = new ExtentReports();
 
