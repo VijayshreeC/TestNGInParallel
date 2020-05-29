@@ -17,9 +17,7 @@ public class ExtentReport {
 		ExtentSparkReporter reporter = new ExtentSparkReporter(path);
 		reporter.config().setReportName("Globmantic");
 		reporter.config().setDocumentTitle("TestResults");
-		String css = ".r-img {width: 450PX; height: 400PX}";
-		System.out.println(css);
-		reporter.config().setCSS(css);
+	
 
 		//reporter.config().setTheme(Theme.DARK);
 
