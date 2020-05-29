@@ -4,6 +4,7 @@ pipeline {
         skipStagesAfterUnstable()
     }
     tools { 
+    cleanWs();
         maven 'maven_3_5_0' 
         jdk 'JDK 11' 
     }
@@ -56,7 +57,7 @@ pipeline {
       script {
     if (env.BRANCH_NAME == 'master')
         currentBuild.result = 'SUCCESS'
-		googleStorageUpload bucket: 'gs://deploymentbucket', credentialsId: 'TestProject1', pattern: 'reports/*Test*.html', sharedPublicly: true
+		googleStorageUpload bucket: 'gs://deploymentbucket', credentialsId: 'TestProject1', pattern: 'reports/*Test-Report*.html', sharedPublicly: true
         //cleanWs();
   }
       
