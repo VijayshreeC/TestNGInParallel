@@ -12,10 +12,10 @@ public class ExtentReport {
 		extent = new ExtentReports();
 		String path = "/var/jenkins_home/workspace/TestProject1/reports/index.html";
 		ExtentSparkReporter reporter = new ExtentSparkReporter(path);
-		//reporter.config().setReportName("Globmantic");
+		reporter.config().setReportName("Globmantic");
 		reporter.config().setDocumentTitle("TestResults");
 
-		reporter.loadXMLConfig(new File("/var/jenkins_home/workspace/TestProject1/extent-config.xml"));
+		//reporter.loadXMLConfig(new File("/var/jenkins_home/workspace/TestProject1/extent-config.xml"));
 		extent = new ExtentReports();
 
 		extent.attachReporter(reporter);
