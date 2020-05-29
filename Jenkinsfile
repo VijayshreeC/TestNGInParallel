@@ -56,7 +56,7 @@ pipeline {
       script {
     if (env.BRANCH_NAME == 'master')
         currentBuild.result = 'SUCCESS'
-		googleStorageUpload bucket: 'gs://deploymentbucket', credentialsId: 'TestProject1', pattern: 'reports/Test-Report-*.html', sharedPublicly: true
+		googleStorageUpload bucket: 'gs://deploymentbucket', credentialsId: 'TestProject1', pattern: 'reports/*.html', sharedPublicly: true
         //cleanWs();
   }
       
