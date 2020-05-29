@@ -1,8 +1,7 @@
 package com.globomantics.test.extentreports;
 
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
+
 
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
@@ -13,9 +12,8 @@ public class ExtentReport {
 
 	public static ExtentReports ReportGenerator() {
 		extent = new ExtentReports();
-		String timeStamp = new SimpleDateFormat("yyyy.MM.dd.HH.mm.ss").format(new Date());// time stamp
-		String repName = "Test-Report-" + timeStamp + ".html";
-		String path = "/var/jenkins_home/workspace/TestProject1/reports/" +repName;
+
+		String path = "/var/jenkins_home/workspace/TestProject1/reports/index.html";
 		ExtentSparkReporter reporter = new ExtentSparkReporter(path);
 		reporter.config().setReportName("Globmantic");
 		reporter.config().setDocumentTitle("TestResults");
