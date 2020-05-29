@@ -14,9 +14,10 @@ public class ExtentReport {
 		ExtentSparkReporter reporter = new ExtentSparkReporter(path);
 		//reporter.config().setReportName("Globmantic");
 		reporter.config().setDocumentTitle("TestResults");
-		//reporter.config().setCSS(".r-img { width: 100%; }");
+
 		reporter.loadXMLConfig(new File("/var/jenkins_home/workspace/TestProject1/extent-config.xml"));
-		
+		extent = new ExtentReports();
+
 		extent.attachReporter(reporter);
 		//extent.loadConfig();
 		extent.setSystemInfo("Tester", "XYZ");
