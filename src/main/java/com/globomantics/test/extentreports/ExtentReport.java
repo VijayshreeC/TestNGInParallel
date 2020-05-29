@@ -2,28 +2,23 @@ package com.globomantics.test.extentreports;
 
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
- 
 
-public class ExtentReport
-{
+public class ExtentReport {
 	static ExtentReports extent;
-	public static ExtentReports ReportGenerator()
-	{
-		//extent report,//exteextentspark
-		  String path ="/var/jenkins_home/workspace/TestProject1/reports/index.html";
-		  ExtentSparkReporter reporter=new ExtentSparkReporter(path);//create html file and config
-		  reporter.config().setReportName("Globmantic");
-		  reporter.config().setDocumentTitle("TestResults");
 
-		//main class
-		    extent=new ExtentReports();
-		  extent.attachReporter(reporter);//attach objects to main class
-		  extent.setSystemInfo("Tester", "XYZ");
-		  return extent;
+	public static ExtentReports ReportGenerator() {
 
+		String path = "/var/jenkins_home/workspace/TestProject1/reports/index.html";
+		ExtentSparkReporter reporter = new ExtentSparkReporter(path);
+		reporter.config().setReportName("Globmantic");
+		reporter.config().setDocumentTitle("TestResults");
+		reporter.config().setCSS(".r-img { width: 30%; }");
+
+		extent = new ExtentReports();
+		extent.attachReporter(reporter);
+		extent.setSystemInfo("Tester", "XYZ");
+		return extent;
 
 	}
-	
-	
 
 }
