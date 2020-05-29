@@ -42,7 +42,7 @@ pipeline {
       keepAll: true,
       reportDir: 'reports',
       includes: '**/*, **/*.css',
-      reportFiles: "^rep.html" , //'index.html',
+      reportFiles: 'index.html',
       reportName: "ExtentTest Report"
     ])
 	junit 'target/surefire-reports/junitreports/**/*.xml'
