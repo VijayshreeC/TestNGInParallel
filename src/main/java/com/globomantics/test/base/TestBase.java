@@ -77,7 +77,7 @@ public class TestBase {
 
 				dc.setPlatform(Platform.LINUX);
 				try {
-					driver = new RemoteWebDriver(new URL("http://34.70.116.45:4444/wd/hub"), dc);
+					driver = new RemoteWebDriver(new URL("http://34.70.254.170:4444/wd/hub"), dc);
 					} catch (MalformedURLException e) {
 
 					System.out.println("Link error");
