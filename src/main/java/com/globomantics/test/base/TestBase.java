@@ -55,6 +55,7 @@ public class TestBase {
 	public void initialization() {
 
 		String browserName = prop.getProperty("browser");
+		String browserName1 = prop.getProperty("browser1");
 		LOGGER.info(Utilities.getCurrentThreadId() + "Instantiating/Launching the " + browserName + " Browser");
 		if (browserName.equals("chrome")) {
 			System.setProperty("webdriver.chrome.driver",
