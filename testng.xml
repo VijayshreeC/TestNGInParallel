@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="JenkinsSuite" verbose="2" parallel="tests"
+<suite name="JenkinsSuite" verbose="2" 
 	thread-count="2">
   
   <listeners>
@@ -14,14 +14,7 @@
     
     </classes>
    
-  </test> <!-- Test -->
-  	<test name="Globomatics Test2 in Chrome">
-    <classes>
-       <class name="com.globomantics.test.testcases.HomePageTest"/>
-       <class name="com.globomantics.test.testcases.NetherlandPageTest"/>
-       
-    
-    </classes>
+  
    
   </test>
 </suite> <!-- Suite -->
