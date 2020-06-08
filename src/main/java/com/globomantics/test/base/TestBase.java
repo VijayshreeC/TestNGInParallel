@@ -16,6 +16,9 @@ import org.openqa.selenium.chrome.ChromeDriverService;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;//execute program on VM or remotely
 import org.openqa.selenium.support.events.EventFiringWebDriver;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
+
 import java.net.MalformedURLException;
 import com.generic.property.PropertyManager;
 import com.generic.utilities.Logg;
@@ -32,10 +35,8 @@ public class TestBase {
 	private static final Logger LOGGER = Logg.createLogger();
 	private static final Properties FRAMEWORKPROPERTY = PropertyManager.loadApplicationPropertyFile();
 
-
 	// Constructor
 	public TestBase() {
-		// TODO Auto-generated constructor stub
 		try {
 			File src = new File(
 					System.getProperty("user.dir") + "/src/main/java/com/globomantics/test/config/config.properties");// location
@@ -52,12 +53,15 @@ public class TestBase {
 
 	}
 
+
 	public void initialization() {
 
 		String browserName = prop.getProperty("browser");
 		String browserName1 = prop.getProperty("browser1");
 		LOGGER.info(Utilities.getCurrentThreadId() + "Instantiating/Launching the " + browserName + " Browser");
+		
 		if (browserName.equals("chrome")) {
+			
 			System.setProperty("webdriver.chrome.driver",
 					"C:\\Users\\swathys\\Downloads\\chromedriver_win32\\chromedriver.exe");
 			driver = new ChromeDriver(); // driver initialization for child class use
@@ -70,7 +74,8 @@ public class TestBase {
 			driver.manage().timeouts().implicitlyWait(TestUtil.Implicit_wait_time, TimeUnit.SECONDS);
 			LOGGER.info(Utilities.getCurrentThreadId() + "Navigationg to " + prop.getProperty("url"));
 			driver.get(prop.getProperty("url"));
-		} else if (browserName.equals("remotechrome")) {
+		} 
+		else if (browserName.equals("remotechrome")) 
 			{
 				System.setProperty(ChromeDriverService.CHROME_DRIVER_SILENT_OUTPUT_PROPERTY, "true");
 				DesiredCapabilities dc = new DesiredCapabilities();
@@ -78,9 +83,10 @@ public class TestBase {
 
 				dc.setPlatform(Platform.LINUX);
 				try {
-					driver = new RemoteWebDriver(new URL("http://34.77.44.43:4444/wd/hub"), dc);
-					} catch (MalformedURLException e) {
-//http://34.70.254.170:4444
+					driver = new RemoteWebDriver(new URL("http://34.77.44.43:4444/wd/hub"), dc);//http://34.70.254.170:4444
+				//http://34.77.44.43:4444	
+				} catch (MalformedURLException e) {
+
 					System.out.println("Link error");
 				}
 				System.out.println("RUNNING TESTS IN REMOTE CHROME BROWSER");				
@@ -93,8 +99,7 @@ public class TestBase {
 				driver.get(prop.getProperty("url"));
 
 			}
+	}
 		}
 
-	}
 
-}

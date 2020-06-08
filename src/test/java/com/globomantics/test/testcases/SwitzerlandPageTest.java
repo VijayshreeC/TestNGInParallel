@@ -18,11 +18,11 @@ import com.globomantics.test.pages.SwitzerlandPage;
 import com.globomantics.test.utilities.TestUtil;
 
 public class SwitzerlandPageTest extends TestBase {
-	public SwitzerlandPageTest() {
-		super();
-
-	}
-
+	/*
+	 * public SwitzerlandPageTest() { super();
+	 * 
+	 * }
+	 */
 	SwitzerlandPage switzerlandPage;
 	HomePageTest homePageTest = new HomePageTest();
 	private static final Logger LOGGER = Logg.createLogger();

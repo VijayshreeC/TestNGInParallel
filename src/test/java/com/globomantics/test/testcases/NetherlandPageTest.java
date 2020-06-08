@@ -1,32 +1,27 @@
 package com.globomantics.test.testcases;
 
-import java.util.concurrent.TimeoutException;
-
 import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
-
 import com.generic.utilities.Logg;
 import com.generic.utilities.Utilities;
 import com.globomantics.test.base.Browser;
 import com.globomantics.test.base.TestBase;
 import com.globomantics.test.pages.HomePage;
 import com.globomantics.test.pages.NetherlandPage;
-import com.globomantics.test.utilities.TestUtil;
 
 public class NetherlandPageTest extends TestBase {
-	public NetherlandPageTest() {
-		super();
+	/*
+	 * public NetherlandPageTest() { super(); }
+	 */
 
-	}
-
+	private static final Logger LOGGER = Logg.createLogger();
 	NetherlandPage netherlandPage;
 	HomePageTest homePageTest = new HomePageTest();
 	HomePage homePage = new HomePage();
-	private static final Logger LOGGER = Logg.createLogger();
 	public String address = null;
 	Browser browser;
 
@@ -57,7 +52,7 @@ public class NetherlandPageTest extends TestBase {
 					if (address.matches((netherlandPage.addressInHomePage()))) {
 						System.out.println("Address matches ");
 					} else {
-						System.out.println("Address does not match" );
+						System.out.println("Address does not match");
 					}
 					break;
 				} catch (NoSuchElementException e) {
@@ -72,4 +67,5 @@ public class NetherlandPageTest extends TestBase {
 		LOGGER.info(Utilities.getCurrentThreadId() + "Closing Browser " + prop.getProperty("browser") + " browser");
 		driver.quit();
 	}
+
 }
