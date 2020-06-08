@@ -55,6 +55,7 @@ public class TestBase {
 	public void initialization() {
 
 		String browserName = prop.getProperty("browser");
+		String browserName1 = prop.getProperty("browser1");
 		LOGGER.info(Utilities.getCurrentThreadId() + "Instantiating/Launching the " + browserName + " Browser");
 		if (browserName.equals("chrome")) {
 			System.setProperty("webdriver.chrome.driver",
@@ -77,9 +78,9 @@ public class TestBase {
 
 				dc.setPlatform(Platform.LINUX);
 				try {
-					driver = new RemoteWebDriver(new URL("http://34.70.116.45:4444/wd/hub"), dc);
+					driver = new RemoteWebDriver(new URL("http://34.77.44.43:4444/wd/hub"), dc);
 					} catch (MalformedURLException e) {
-
+//http://34.70.254.170:4444
 					System.out.println("Link error");
 				}
 				System.out.println("RUNNING TESTS IN REMOTE CHROME BROWSER");				
