@@ -10,7 +10,7 @@
     <classes>
   <class name="com.globomantics.test.testcases.HomePageTest"/> 
       <class name="com.globomantics.test.testcases.NetherlandPageTest"/>
-       <class name="com.globomantics.test.testcases.SwitzerlandPageTest"/> 
+        <class name="com.globomantics.test.testcases.SwitzerlandPageTest"/>
       
     </classes>
    </test>
