@@ -12,9 +12,9 @@ public class ExtentReport {
 		extent = new ExtentReports();
 
 		String timeStamp = new SimpleDateFormat("yyyy.MM.dd.HH.mm.ss").format(new Date());// time stamp
-		String repName = "Test-Report-" + timeStamp + ".html";
-		String path = "/var/jenkins_home/workspace/TestProject/reports/" + repName;
-		//String path=System.getProperty("user.dir") + "/Reports/ " +repName;
+		//String repName = "Test-Report-" + timeStamp + ".html";
+		String path = "/var/jenkins_home/workspace/TestProject/reports/" + "index.html";
+		//String path=System.getProperty("user.dir") + "/reports/ " + "index.html";
 		ExtentSparkReporter reporter = new ExtentSparkReporter(path);
 		reporter.config().setReportName("Globmantic Automation Test Report");
 		reporter.config().setDocumentTitle("TestResults");
