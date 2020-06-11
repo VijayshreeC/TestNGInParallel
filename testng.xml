@@ -1,21 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="JenkinsSuite" verbose="2" 
-	thread-count="2">
+<suite name="JenkinsSuite" verbose="2" parallel="classes"
+	thread-count="3">
   
-  <listeners>
+   <listeners>
  	<listener class-name="com.globomantics.test.extentreports.ExtentListner"/>
  	 	</listeners>
  	 	<test name="Globomatics Test in Chrome">
     <classes>
-      <class name="com.globomantics.test.testcases.HomePageTest"/> 
-     <class name="com.globomantics.test.testcases.NetherlandPageTest"/>
-         <class name="com.globomantics.test.testcases.SwitzerlandPageTest"/> 
-    
+  <class name="com.globomantics.test.testcases.HomePageTest"/> 
+      <class name="com.globomantics.test.testcases.NetherlandPageTest"/>
+       <class name="com.globomantics.test.testcases.SwitzerlandPageTest"/> 
+      
     </classes>
-   
-  
-   
-  </test>
+   </test>
+   <!-- <test name="Globomatics Test in Chrome2">
+    <classes>
+
+       <class name="com.globomantics.test.testcases.SwitzerlandPageTest"/> 
+     
+    </classes>
+    </test> -->
 </suite> <!-- Suite -->
 

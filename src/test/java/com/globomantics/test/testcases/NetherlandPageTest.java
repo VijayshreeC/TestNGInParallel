@@ -14,26 +14,25 @@ import com.globomantics.test.pages.HomePage;
 import com.globomantics.test.pages.NetherlandPage;
 
 public class NetherlandPageTest extends TestBase {
-	/*
-	 * public NetherlandPageTest() { super(); }
-	 */
-
+	
 	private static final Logger LOGGER = Logg.createLogger();
 	NetherlandPage netherlandPage;
-	HomePageTest homePageTest = new HomePageTest();
-	HomePage homePage = new HomePage();
+	public static long Page_Load_time=160;
+	public static long Implicit_wait_time=100;
+	
 	public String address = null;
 	Browser browser;
 
 	@BeforeClass
 	public void openBrowser() {
-		initialization();
-		netherlandPage = new NetherlandPage();
+		driver= initialization();
+		NetherlandPage netherlandPage = new NetherlandPage(driver);
 
 	}
 
 	@Test(priority = 1)
 	public void CompareAddressOfNetherland() throws Exception {
+		NetherlandPage netherlandPage = new NetherlandPage(driver);
 		LOGGER.info(Utilities.getCurrentThreadId() + "Comparing the address between the home page and the table ");
 		netherlandPage.selectFromDropDownN(prop.getProperty("countryvalue1"));
 

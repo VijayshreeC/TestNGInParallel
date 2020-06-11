@@ -8,14 +8,12 @@ import org.openqa.selenium.NoSuchElementException;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
-
 import com.generic.utilities.Logg;
 import com.generic.utilities.Utilities;
 import com.globomantics.test.base.Browser;
 import com.globomantics.test.base.TestBase;
-import com.globomantics.test.pages.NetherlandPage;
 import com.globomantics.test.pages.SwitzerlandPage;
-import com.globomantics.test.utilities.TestUtil;
+
 
 public class SwitzerlandPageTest extends TestBase {
 	/*
@@ -31,8 +29,8 @@ public class SwitzerlandPageTest extends TestBase {
 
 	@BeforeClass
 	public void openBrowser() {
-		initialization();
-		switzerlandPage = new SwitzerlandPage();
+		driver= initialization();
+		switzerlandPage = new SwitzerlandPage(driver);
 
 	}
 
@@ -40,6 +38,7 @@ public class SwitzerlandPageTest extends TestBase {
 	public void CompareAddressOfSwitzerland() throws TimeoutException
 
 	{
+		switzerlandPage = new SwitzerlandPage(driver);
 		LOGGER.info(Utilities.getCurrentThreadId() + "Comparing the address between the home page and the table ");
 		switzerlandPage.selectFromDropDownN(prop.getProperty("countryvalue2"));
 

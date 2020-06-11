@@ -3,6 +3,7 @@ package com.globomantics.test.pages;
 import java.util.List;
 import java.util.concurrent.TimeoutException;
 
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -25,10 +26,11 @@ public class SwitzerlandPage extends TestBase{
 	@FindBy(xpath="//*[@class='price']")
 	WebElement cost;
 	
-	public SwitzerlandPage()
+	public SwitzerlandPage(WebDriver d)
 	
 	{
-		PageFactory.initElements(driver, this);
+		this.driver=d;
+		PageFactory.initElements(d, this);
 	
 	}
 	

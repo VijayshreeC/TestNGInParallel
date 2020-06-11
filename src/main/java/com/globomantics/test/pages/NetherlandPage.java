@@ -5,6 +5,7 @@ import java.util.NoSuchElementException;
 import java.util.concurrent.TimeoutException;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -29,10 +30,11 @@ public class NetherlandPage extends TestBase
 	@FindBy(xpath="//*[@class='price']")
 	WebElement cost;
 	
-	public NetherlandPage()
+	public NetherlandPage(WebDriver d)
 	
 	{
-		PageFactory.initElements(driver, this);
+		this.driver=d;
+		PageFactory.initElements(d, this);
 	
 	}
 	

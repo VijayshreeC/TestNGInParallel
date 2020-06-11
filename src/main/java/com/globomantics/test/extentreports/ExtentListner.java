@@ -1,34 +1,34 @@
 package com.globomantics.test.extentreports;
 
 import java.io.IOException;
+import org.openqa.selenium.WebDriver;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
-import com.globomantics.test.utilities.TestUtil;
+import com.globomantics.test.base.TestBase;
 
-public class ExtentListner extends TestUtil implements ITestListener {
+
+public class ExtentListner extends TestBase implements ITestListener 
+{
 	ExtentReports extent = ExtentReport.ReportGenerator();
 	ExtentTest test;
-	
+	private static ThreadLocal<ExtentTest> extentTest = new ThreadLocal<ExtentTest>();
+
 	@Override
 	public void onTestStart(ITestResult result) {
 		test = extent.createTest(result.getMethod().getMethodName());
-
+		extentTest.set(test);
 	}
 
 	@Override
 	public void onTestSuccess(ITestResult result) {
-
-		test.log(Status.PASS, "Test Passed");
+		extentTest.get().log(Status.PASS, "Test Passed");
 		try {
-			test.addScreenCaptureFromPath(takeSnapShotAtEnd(result.getMethod().getMethodName()),
+			extentTest.get().addScreenCaptureFromPath(takeSnapShotAtEnd(result.getMethod().getMethodName(),driver),
 					result.getMethod().getMethodName());
-		} catch (IOException e) {
-
-			e.printStackTrace();
 		} catch (Exception e) {
 
 			e.printStackTrace();
@@ -37,10 +37,20 @@ public class ExtentListner extends TestUtil implements ITestListener {
 
 	@Override
 	public void onTestFailure(ITestResult result) {
-
-		test.fail(result.getThrowable());
+		WebDriver driver = null;
+		extentTest.get().fail(result.getThrowable());
+		Object testObject = result.getInstance();
+		System.out.println("Object Instance " +testObject.toString());
+		Class cl = result.getTestClass().getRealClass();
+		System.out.println("Class name" +cl);
 		try {
-			test.addScreenCaptureFromPath(takeSnapShotAtEnd(result.getMethod().getMethodName()),
+			driver = (WebDriver)cl.getDeclaredField("driver").get(testObject);
+			 
+		} catch (Exception e1) {
+			e1.printStackTrace();
+		}
+		try {
+			extentTest.get().addScreenCaptureFromPath(takeSnapShotAtEnd(result.getMethod().getMethodName(), driver),
 					result.getMethod().getMethodName());
 		} catch (IOException e) {
 
@@ -54,9 +64,9 @@ public class ExtentListner extends TestUtil implements ITestListener {
 	@Override
 	public void onTestSkipped(ITestResult result) {
 
-		test.log(Status.SKIP, "Skipped");
+		extentTest.get().log(Status.SKIP, "Skipped");
 		try {
-			test.addScreenCaptureFromPath(takeSnapShotAtEnd(result.getMethod().getMethodName()),
+			test.addScreenCaptureFromPath(takeSnapShotAtEnd(result.getMethod().getMethodName(),driver),
 					result.getMethod().getMethodName());
 		} catch (IOException e) {
 
@@ -69,9 +79,9 @@ public class ExtentListner extends TestUtil implements ITestListener {
 
 	@Override
 	public void onTestFailedButWithinSuccessPercentage(ITestResult result) {
-		test.log(Status.PASS, "Successful");
+		extentTest.get().log(Status.PASS, "Successful");
 		try {
-			test.addScreenCaptureFromPath(takeSnapShotAtEnd(result.getMethod().getMethodName()),
+			test.addScreenCaptureFromPath(takeSnapShotAtEnd(result.getMethod().getMethodName(),driver),
 					result.getMethod().getMethodName());
 		} catch (IOException e) {
 
@@ -89,7 +99,5 @@ public class ExtentListner extends TestUtil implements ITestListener {
 
 	@Override
 	public void onStart(ITestContext context) {
-
-
 	}
 }
