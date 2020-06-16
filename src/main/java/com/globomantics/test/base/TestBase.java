@@ -7,14 +7,9 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
-
-import org.apache.commons.io.FileUtils;
 import org.apache.log4j.Logger;
-import org.openqa.selenium.OutputType;
 import org.openqa.selenium.Platform;
-import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebDriverException;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeDriverService;
 import org.openqa.selenium.remote.DesiredCapabilities;
@@ -32,7 +27,7 @@ public class TestBase {
 	protected ThreadLocal<WebDriver> driver1 = new ThreadLocal<>();
 	public WebDriver driver;
 
-	//public WebDriver driver;
+	// public WebDriver driver;
 
 	public TestBase() {
 		try {
@@ -51,17 +46,16 @@ public class TestBase {
 	}
 
 	public WebDriver initialization() {
-		
+
 		String browserName = prop.getProperty("browser");
 		LOGGER.info(Utilities.getCurrentThreadId() + "Instantiating/Launching the " + browserName + " Browser");
 
-		
 		if (browserName.equals("chrome")) {
 			// WebDriverManager.chromedriver().setup();
 
 			System.setProperty("webdriver.chrome.driver",
 					System.getProperty("user.dir") + "/resources/com/drivers/chromedriver.exe");
-			driver1.set(new ChromeDriver()); 
+			driver1.set(new ChromeDriver());
 			System.setProperty(ChromeDriverService.CHROME_DRIVER_SILENT_OUTPUT_PROPERTY, "true");
 
 		} else if (browserName.equals("remotechrome")) {
@@ -71,14 +65,14 @@ public class TestBase {
 
 			dc.setPlatform(Platform.LINUX);
 			try {
-				driver1.set( new RemoteWebDriver(new URL("http://34.77.44.43:4444/wd/hub"), dc));// http://34.70.254.170:4444
+				driver1.set(new RemoteWebDriver(new URL("http://35.195.6.15:4444//wd/hub"), dc));// http://34.70.254.170:4444
 				// http://34.77.44.43:4444
 			} catch (MalformedURLException e) {
 
 				System.out.println("Link error");
 			}
 		}
-		driver=driver1.get();
+		driver = driver1.get();
 		System.out.println("RUNNING TESTS IN REMOTE CHROME BROWSER");
 		LOGGER.info(Utilities.getCurrentThreadId() + "Maximize Windows of- " + browserName + " Browser");
 		driver.manage().window().maximize();
@@ -88,11 +82,6 @@ public class TestBase {
 		driver.manage().timeouts().implicitlyWait(Implicit_wait_time, TimeUnit.SECONDS);
 		LOGGER.info(Utilities.getCurrentThreadId() + "Navigationg to " + prop.getProperty("url"));
 		driver.get(prop.getProperty("url"));
-		
 		return driver;
 	}
-
-	
-	
-	
 }
