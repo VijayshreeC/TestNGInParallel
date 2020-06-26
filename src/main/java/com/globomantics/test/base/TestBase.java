@@ -65,7 +65,7 @@ public class TestBase {
 
 			dc.setPlatform(Platform.LINUX);
 			try {
-				driver1.set(new RemoteWebDriver(new URL("http://34.72.28.103:4444/wd/hub"), dc));// http://34.70.254.170:4444
+				driver1.set(new RemoteWebDriver(new URL("http://35.202.124.227:4444 /wd/hub"), dc));// http://34.70.254.170:4444
 				// http://34.77.44.43:4444
 			} catch (MalformedURLException e) {
 
