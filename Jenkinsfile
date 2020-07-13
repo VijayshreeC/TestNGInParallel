@@ -33,10 +33,16 @@ pipeline {
                 
             }
      }
+	 stage ('Add CSP') {
+		steps {
+				sh label: '', script: 'System.setProperty("hudson.model.DirectoryBrowserSupport.CSP", "sandbox allow-same-origin allow-scripts; default-src \'self\'; script-src * \'unsafe-eval\'; img-src *; style-src * \'unsafe-inline\'; font-src *"); '
+	 }
+	 }
+	 
 	 stage ('Build Results') {
 
             steps {
-		    sh label: '', script: 'System.setProperty("hudson.model.DirectoryBrowserSupport.CSP", "sandbox allow-same-origin allow-scripts; default-src \'self\'; script-src * \'unsafe-eval\'; img-src *; style-src * \'unsafe-inline\'; font-src *"); '
+		    
 		           publishHTML (target: [
       allowMissing: false,
       alwaysLinkToLastBuild: false,
