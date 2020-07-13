@@ -43,8 +43,9 @@ pipeline {
       reportDir: 'reports',
       includes: '**/*, **/*.css',
       reportFiles: 'index.html',
-      //reportName: "ExtentTest Report"
-reportName: 'HTML Report-Globomantics', reportTitles: ''])
+      reportName: "ExtentTest Report"
+//reportName: 'HTML Report-Globomantics', reportTitles: ''
+			   ])
     
 	junit 'target/surefire-reports/junitreports/**/*.xml'
                 
