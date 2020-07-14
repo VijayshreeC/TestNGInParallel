@@ -35,9 +35,9 @@ public class ExtentListner extends TestBase implements ITestListener {
 		if (webDriver != null) {
 			File scrFile = ((TakesScreenshot) webDriver).getScreenshotAs(OutputType.FILE);// cast driver to screenshot
 																							// mode
-			String destPath = "reports/screenshots/" + System.currentTimeMillis() + result.getMethod().getMethodName()
+			String destPath = "/var/jenkins_home/workspace/Jenkins_POC/reports/screenshots/" + System.currentTimeMillis() + result.getMethod().getMethodName()
 					+ ".png";
-			String imagePath = "./screenshots/" + System.currentTimeMillis() + result.getMethod().getMethodName()
+			String imagePath = "/var/jenkins_home/workspace/Jenkins_POC/reports/screenshots" + System.currentTimeMillis() + result.getMethod().getMethodName()
 					+ ".png";
 			File file = new File(destPath);
 			try {
