@@ -67,12 +67,12 @@ pipeline {
         currentBuild.result = 'SUCCESS'
 	      googleStorageUpload bucket: 'gs://deploymentbucket', credentialsId: 'Jenkins_POC', pattern: 'reports/screenshots', sharedPublicly: true
 		googleStorageUpload bucket: 'gs://deploymentbucket', credentialsId: 'Jenkins_POC', pattern: 'reports/index.html', sharedPublicly: true
-        //cleanWs();
+        cleanWs();
   }
       
 	 } 
 	  }
-	//
+	
 		}
 	
 
