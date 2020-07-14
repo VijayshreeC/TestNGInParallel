@@ -37,7 +37,7 @@ public class ExtentListner extends TestBase implements ITestListener {
 																							// mode
 			String destPath = "reports/screenshots/" + System.currentTimeMillis() + result.getMethod().getMethodName()
 					+ ".png";
-			String imagePath = "screenshots/" + System.currentTimeMillis() + result.getMethod().getMethodName()
+			String imagePath = "./screenshots/" + System.currentTimeMillis() + result.getMethod().getMethodName()
 					+ ".png";
 			File file = new File(destPath);
 			try {
@@ -75,7 +75,7 @@ public class ExtentListner extends TestBase implements ITestListener {
 																							// mode
 			String destPath = "reports/screenshots/" + System.currentTimeMillis() + result.getMethod().getMethodName()
 					+ ".png";
-			String imagePath = "screenshots/" + System.currentTimeMillis() + result.getMethod().getMethodName()
+			String imagePath = "./screenshots/" + System.currentTimeMillis() + result.getMethod().getMethodName()
 					+ ".png";
 			File file = new File(destPath);
 			try {
@@ -108,7 +108,7 @@ public class ExtentListner extends TestBase implements ITestListener {
 																							// mode
 			String destPath = "reports/screenshots/" + System.currentTimeMillis() + result.getMethod().getMethodName()
 					+ ".png";
-			String imagePath = "screenshots/" + System.currentTimeMillis() + result.getMethod().getMethodName()
+			String imagePath = "./screenshots/" + System.currentTimeMillis() + result.getMethod().getMethodName()
 					+ ".png";
 			File file = new File(destPath);
 			try {
@@ -137,7 +137,7 @@ public class ExtentListner extends TestBase implements ITestListener {
 																							// mode
 			String destPath = "reports/screenshots/" + System.currentTimeMillis() + result.getMethod().getMethodName()
 					+ ".png";
-			String imagePath = "screenshots/" + System.currentTimeMillis() + result.getMethod().getMethodName()
+			String imagePath = "./screenshots/" + System.currentTimeMillis() + result.getMethod().getMethodName()
 					+ ".png";
 			File file = new File(destPath);
 			try {
