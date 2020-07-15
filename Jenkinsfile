@@ -68,7 +68,7 @@ pipeline {
 	      
 	googleStorageUpload bucket: 'gs://deploymentbucket', credentialsId: 'Jenkins_POC', pattern: 'reports/index.html', sharedPublicly: true
 	      googleStorageUpload bucket: 'gs://deploymentbucket', credentialsId: 'Jenkins_POC', pattern: 'reports/screenshots/*.png', sharedPublicly: true
-        cleanWs();
+        //cleanWs();
   }
       
 	 } 
