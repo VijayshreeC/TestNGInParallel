@@ -62,21 +62,13 @@ public class ExtentListner extends TestBase implements ITestListener {
 		Object currentClass = result.getInstance();
 		WebDriver webDriver = ((TestBase) currentClass).driver;
 		extentTest.get().fail(result.getThrowable());
-		/*
-		 * Object testObject = result.getInstance();
-		 * System.out.println("Object Instance " + testObject.toString()); Class cl =
-		 * result.getTestClass().getRealClass(); System.out.println("Class name" + cl);
-		 * try { driver = (WebDriver) cl.getDeclaredField("driver").get(testObject);
-		 * 
-		 * } catch (Exception e1) { e1.printStackTrace(); }
-		 */
-		if (webDriver != null) {
-			File scrFile = ((TakesScreenshot) webDriver).getScreenshotAs(OutputType.FILE);// cast driver to screenshot
-																							// mode
-			String destPath = "reports/screenshots/" + System.currentTimeMillis() + result.getMethod().getMethodName()
+			if (webDriver != null) {
+			File scrFile = ((TakesScreenshot) webDriver ).getScreenshotAs(OutputType.FILE);// cast driver to screenshot
+			String timeStamp = new SimpleDateFormat("yyyy.MM.dd.HH.mm.ss").format(new Date());																				// mode
+			String destPath = "reports/screenshots/" + timeStamp + result.getMethod().getMethodName()
 					+ ".png";
-			String imagePath = "./screenshots/" + System.currentTimeMillis() + result.getMethod().getMethodName()
-					+ ".png";
+			String imagePath = "./screenshots/" + timeStamp + result.getMethod().getMethodName()
+				+ ".png";
 			File file = new File(destPath);
 			try {
 				FileUtils.copyFile(scrFile, file);
